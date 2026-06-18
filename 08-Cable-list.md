@@ -70,25 +70,42 @@ Poznámka k SolaX 5×10: jistič Grid AC C40A a EPS AC C32A tolerují 5×6, ale 
 
 ---
 
-## D. Podlahové topení (R2 / přes stykač → topná rohož)
+## D. Podlahové topení (R2 RCBO → R1 Finder relé → topná rohož)
 
 11 zón, všechny kabely jednotně 3×2,5 dle reálného seznamu.
 
+Topologie kabelů:
+1. **D-1 propojky R2 ↔ R1** (11 ks) — z R2 Row 6 (RCBO P01–P11) do R1 Row 4 (Finder relé KP01–KP11). Krátké kabely uvnitř / mezi rozvaděči.
+2. **D-2 kabel k rohoži** (11 ks) — z R1 Row 4 (kontakt Finder relé) do podlahové rohože v dané místnosti.
+
 | ID | Z | Do | Typ | Průřez | Délka | IP | Návaznost |
 |---|---|---|---|---|---:|---|---|
-| C-D01 | R2 stykač P01 | rohož předsíň (chodba 1NP) 320W | CYKY-J | 3×2,5 | TBD | trubka v podlaze | P01 |
-| C-D02 | R2 stykač P02 | rohož pracovna 1100W | CYKY-J | 3×2,5 | TBD | trubka v podlaze | P02 |
-| C-D03 | R2 stykač P03 | rohož kuchyň 1100W | CYKY-J | 3×2,5 | TBD | trubka v podlaze | P03 |
-| C-D04 | R2 stykač P04 | rohož obývák 1100W | CYKY-J | 3×2,5 | TBD | trubka v podlaze | P04 |
-| C-D05 | R2 stykač P05 | rohož jídelna 1100W | CYKY-J | 3×2,5 | TBD | trubka v podlaze | P05 |
-| C-D06 | R2 stykač P06 | rohož chodba 2NP 450W | CYKY-J | 3×2,5 | TBD | trubka v podlaze | P06 |
-| C-D07 | R2 stykač P07 | rohož ložnice 750W | CYKY-J | 3×2,5 | TBD | trubka v podlaze | P07 |
-| C-D08 | R2 stykač P08 | rohož pokoj 1100W | CYKY-J | 3×2,5 | TBD | trubka v podlaze | P08 |
-| C-D09 | R2 stykač P09 | rohož koupelna 450W | CYKY-J | 3×2,5 | TBD | koupelna, IP | P09 |
-| C-D10 | R2 stykač P10 | rohož chodba sklep 200W | CYKY-J | 3×2,5 | TBD | suterén | P10 |
-| C-D11 | R2 stykač P11 | rohož kalírna sklep 1100W | CYKY-J | 3×2,5 | TBD | suterén | P11 |
+| C-D01 | R1 Row 4 Finder KP01 | rohož předsíň (chodba 1NP) 320W | CYKY-J | 3×2,5 | TBD | trubka v podlaze | P01 |
+| C-D02 | R1 Row 4 Finder KP02 | rohož pracovna 1100W | CYKY-J | 3×2,5 | TBD | trubka v podlaze | P02 |
+| C-D03 | R1 Row 4 Finder KP03 | rohož kuchyň 1100W | CYKY-J | 3×2,5 | TBD | trubka v podlaze | P03 |
+| C-D04 | R1 Row 4 Finder KP04 | rohož obývák 1100W | CYKY-J | 3×2,5 | TBD | trubka v podlaze | P04 |
+| C-D05 | R1 Row 4 Finder KP05 | rohož jídelna 1100W | CYKY-J | 3×2,5 | TBD | trubka v podlaze | P05 |
+| C-D06 | R1 Row 4 Finder KP06 | rohož chodba 2NP 450W | CYKY-J | 3×2,5 | TBD | trubka v podlaze | P06 |
+| C-D07 | R1 Row 4 Finder KP07 | rohož ložnice 750W | CYKY-J | 3×2,5 | TBD | trubka v podlaze | P07 |
+| C-D08 | R1 Row 4 Finder KP08 | rohož pokoj 1100W | CYKY-J | 3×2,5 | TBD | trubka v podlaze | P08 |
+| C-D09 | R1 Row 4 Finder KP09 | rohož koupelna 450W | CYKY-J | 3×2,5 | TBD | koupelna, IP | P09 |
+| C-D10 | R1 Row 4 Finder KP10 | rohož chodba sklep 200W | CYKY-J | 3×2,5 | TBD | suterén | P10 |
+| C-D11 | R1 Row 4 Finder KP11 | rohož kalírna sklep 1100W | CYKY-J | 3×2,5 | TBD | suterén | P11 |
 
-Poznámka: ke každé rohoži samostatný kabel od stykače (jednotlivá zóna), termostaty řešeny v Loxone přes OW čidlo. Stykače / relé pro P01–P11 jsou v R2, spínání 230V dle Relay Extension #2. Zóna sprcha vypuštěna (řešena v rámci koupelnové zóny P09). Předsíň a chodba 2NP jsou na 3×2,5 přestože výkonem stačil 3×1,5 — sjednocení průřezu zjednodušuje montáž.
+### Propojky R2 ↔ R1 (silová strana relé)
+
+| ID | Z | Do | Typ | Průřez | Délka | Návaznost |
+|---|---|---|---|---|---:|---|
+| C-D01p | R2 Row 6 RCBO P01 | R1 Row 4 Finder KP01 vstup | CYKY-J | 3×2,5 | krátký (R1↔R2 vedle sebe) | P01 |
+| C-D02p | R2 Row 6 RCBO P02 | R1 Row 4 Finder KP02 vstup | CYKY-J | 3×2,5 | krátký | P02 |
+| C-D03p až C-D11p | R2 Row 6 RCBO P03–P11 | R1 Row 4 Finder KP03–KP11 vstup | CYKY-J | 3×2,5 | krátký | P03–P11 |
+
+Poznámka:
+- Ke každé rohoži samostatný kabel od Finder relé v R1 (jednotlivá zóna). Termostaty řešeny v Loxone přes OneWire čidlo (OW01–OW11) + pokojová Touch Tree.
+- **Spínací relé Finder 39.31.0.024.0060 (slim 0,5 M, 6 A, cívka 24 V AC/DC) jsou v R1 Row 4**, vedle Relay Extension #2, která spíná jejich cívky 24 V z Loxone PSU.
+- Zóna sprcha vypuštěna (řešena v rámci koupelnové zóny P09).
+- Předsíň, chodba 2NP a chodba sklep jsou kabelem 3×2,5 přestože výkonem stačil 3×1,5 — sjednocení průřezu zjednodušuje montáž.
+- Doporučení: R1 a R2 ve společném stojanu / vedle sebe, aby propojky D-Xp byly krátké (~30 cm).
 
 ---
 

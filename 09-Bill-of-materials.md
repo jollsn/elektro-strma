@@ -466,7 +466,17 @@ Určuje, při jakém násobku jmenovitého proudu jistič rychle vybaví (krátk
 | C40 | charakteristika C, 40 A |
 | /4 | 4-pólový |
 
-### Eaton Z-SCH230/16-22
+### Finder 39.31.0.024.0060 (slim spínací relé použité v naší instalaci)
+| Část | Význam |
+|---|---|
+| 39 | řada 39 = Slim relé (8,8 mm = 0,5 M) |
+| 3 | typ kontaktu 3 = 6 A AC1 |
+| 1 | 1× přepínací kontakt (CO = NO + NC) |
+| 0 | univerzální AC/DC cívka |
+| 024 | jmenovité napětí cívky 24 V |
+| 0060 | varianta s LED + RC ochrana cívky, kontakty AgNi |
+
+### Eaton Z-SCH230/16-22 (instalační stykač — alternativa, v naší instalaci se nepoužívá)
 | Část | Význam |
 |---|---|
 | Z-SCH | Z-řada instalační stykač (Schütz) |

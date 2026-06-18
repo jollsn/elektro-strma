@@ -66,7 +66,7 @@
   - PL6/PL7-XX/Y (MCB)
   - PFIM-40/4/003-A (RCCB)
   - SPB-12/280/4 (SPD T1+T2)
-  - Z-SCH230 / Z-RA230 (stykače / relé)
+  - Z-RA230/8-22 (pom. relé R2 Row 2 — 7 ks)
 - ❓ Ověřit zkratovou odolnost na přípojce → rozhodnout PL6 (6 kA) vs PL7 (10 kA)
 
 ### Loxone

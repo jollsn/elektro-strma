@@ -96,9 +96,9 @@ Hlavní vypínač 4P 40A je na dveřích, nezabírá DIN.
 | 5 | T10 RCBO oběhové čerpadlo TUV (B10A) | 2 M |
 | 6 | T11 RCBO čerpadlo jímky (C16A) | 2 M |
 | 7 | EM3F01 měřič podlah 3F | 4 M |
-| 8 | Stykač master blok topení | 1 M |
-| 9 | Stykač sauna blokace | 1 M |
-| 10 | Stykač žebřík blokace | 1 M |
+| 8 | Pom. relé master blok topení (Eaton Z-RA230/8-22) | 1 M |
+| 9 | Pom. relé sauna blokace | 1 M |
+| 10 | Pom. relé žebřík blokace | 1 M |
 | 11 | Pomocné relé blackout signál | 1 M |
 | 12 | Pomocné relé enable boileru | 1 M |
 | 13 | Pomocné relé venkovní dekor | 1 M |
@@ -183,11 +183,11 @@ Stykače jsou v R1 Row 4. Sem jen RCBO podlah.
 R2 má **15 M celkovou rezervu**, Row 3 nejvíc (9 M). Nejvíc obtěžké jsou Row 4 (0 M) — sem už nic nepřibude bez přepracování.
 
 ## Kabeláž R1 ↔ R2 navíc
-Protože stykače podlah jsou v R1 a jejich silové vstupy přicházejí z RCBO v R2 Row 6, musíme tahat 11 kabelů (CYKY-J 3×2,5) mezi rozvaděči:
+Protože spínací relé podlah (Finder 39.31) jsou v R1 a jejich silové vstupy přicházejí z RCBO v R2 Row 6, musíme tahat 11 propojek (CYKY-J 3×2,5) mezi rozvaděči:
 
-- R2 Row 6 P01 RCBO → R1 Row 4 stykač P01 → výstup → R2 / sběrnice nebo přímo do podlahy
-- Toto neplatí pokud R1 a R2 jsou vedle sebe (společný stojan) — pak jsou kabely krátké
-- Pokud R1 a R2 jsou v různých místnostech, je to ~11 dlouhých kabelů navíc
+- R2 Row 6 P01 RCBO → R1 Row 4 Finder KP01 (kontakt) → kabel přímo do topné rohože
+- Toto neplatí pokud R1 a R2 jsou vedle sebe (společný stojan) — pak jsou propojky krátké (~30 cm)
+- Pokud R1 a R2 jsou v různých místnostech, je to 11 dlouhých kabelů navíc
 
 > **Doporučení: R1 a R2 vedle sebe ve společném stojanu / místnosti.** Jinak se 11 silových kabelů mezi rozvaděči zbytečně prodlouží a vytvoří EMC zátěž v blízkosti slaboproudu R1.
 
