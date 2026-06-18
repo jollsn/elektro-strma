@@ -19,23 +19,23 @@
 
 ## 2. One-Wire čidla podlah
 
-### One-Wire Extension
-- OW01 chodba
+### One-Wire Extension (11 čidel)
+- OW01 předsíň (chodba 1NP)
 - OW02 pracovna
 - OW03 kuchyň
-- OW04 obývák1
-- OW05 obývák2
-- OW06 chodba2
+- OW04 obývák
+- OW05 jídelna
+- OW06 chodba 2NP
 - OW07 ložnice
 - OW08 pokoj
 - OW09 koupelna
-- OW10 sprcha
-- OW11 suterén
-- OW12 kalírna
+- OW10 chodba sklep
+- OW11 kalírna sklep
 
 ### Poznámka
 - Doplnit přesné adresy čidel po oživení
 - Doplnit místnosti do Loxone Config jako zóny topení
+- Zóna sprcha řešena v rámci P09 koupelna (vlastní čidlo není)
 
 ---
 
@@ -128,41 +128,41 @@
 
 ## 6. Relay Extension – rozdělení funkcí
 
-### Relay Extension 1
-- R1 žaluzie 1 up
-- R2 žaluzie 1 down
-- R3 žaluzie 2 up
-- R4 žaluzie 2 down
-- R5 žaluzie 3 up
-- R6 žaluzie 3 down
-- R7 žaluzie 4 up
-- R8 žaluzie 4 down
-- R9 žaluzie 5 up
-- R10 žaluzie 5 down
-- R11 žaluzie 6 up
-- R12 žaluzie 6 down
-- R13 žaluzie 7 up
-- R14 žaluzie 7 down
-
-### Relay Extension 2
-- R1 podlaha chodba
-- R2 podlaha pracovna
-- R3 podlaha kuchyň
-- R4 podlaha obývák1
-- R5 podlaha obývák2
-- R6 podlaha chodba2
-- R7 podlaha ložnice
-- R8 podlaha pokoj
-- R9 podlaha koupelna
-- R10 podlaha sprcha
-- R11 podlaha suterén
-- R12 podlaha kalírna
+### Relay Extension 1 – žaluzie (5 motorů, 10 výstupů, 4 rezerva)
+- R1 žaluzie pokoj up
+- R2 žaluzie pokoj down
+- R3 žaluzie ložnice 2NP up
+- R4 žaluzie ložnice 2NP down
+- R5 žaluzie obývák pravo up
+- R6 žaluzie obývák pravo down
+- R7 žaluzie obývák střed up
+- R8 žaluzie obývák střed down
+- R9 žaluzie obývák dveře up
+- R10 žaluzie obývák dveře down
+- R11 rezerva
+- R12 rezerva
 - R13 rezerva
 - R14 rezerva
 
-### Relay Extension 3
+### Relay Extension 2 – podlahové topení (11 zón, 3 rezerva)
+- R1 podlaha předsíň (P01)
+- R2 podlaha pracovna (P02)
+- R3 podlaha kuchyň (P03)
+- R4 podlaha obývák (P04)
+- R5 podlaha jídelna (P05)
+- R6 podlaha chodba 2NP (P06)
+- R7 podlaha ložnice (P07)
+- R8 podlaha pokoj (P08)
+- R9 podlaha koupelna (P09)
+- R10 podlaha chodba sklep (P10)
+- R11 podlaha kalírna sklep (P11)
+- R12 rezerva
+- R13 rezerva
+- R14 rezerva
+
+### Relay Extension 3 – pomocná logika a blokace
 - R1 boiler enable / priorita
-- R2 žebřík enable
+- R2 žebřík / radiátor koupelna enable
 - R3 sauna enable
 - R4 master blok topení
 - R5 blackout signal
